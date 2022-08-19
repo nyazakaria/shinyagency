@@ -10,8 +10,14 @@ const StyleGlobal = createGlobalStyle`
     body {
         background-color: ${(props) =>
           props.isDarkMode ? '#2F2E41' : 'white'};
-        color: ${({isDarkMode}) => (isDarkMode ? 'white' : 'black')};
+        color: ${({ isDarkMode }) => (isDarkMode ? 'white' : 'black')};
         margin: 0;  
+      
+      } 
+       a { 
+        color : ${({ isDarkMode }) => (isDarkMode ? 'white' : 'black')}; 
+        text-decoration : none;
+       
     }
 `
 

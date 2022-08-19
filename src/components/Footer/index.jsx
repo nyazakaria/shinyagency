@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import colors from '../../utils/style/colors'
 import { useContext } from 'react'
 import { ThemeContext } from '../../utils/context/Context'
-
+//import { ThemeProvider } from './utils/context/Context'
 const FooterContainer = styled.footer`
   display: flex;
   flex-direction: row;

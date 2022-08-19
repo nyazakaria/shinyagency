@@ -9,24 +9,26 @@ import Freelances from './pages/Freelances'
 import Results from './pages/Results'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import  GlobalStyle  from './utils/style/GlobalStyle'
-import { ThemeProvider } from './utils/context/Context'
+import GlobalStyle from './utils/style/GlobalStyle'
+import { ThemeProvider, SurveyProvider } from './utils/context/Context'
 import Footer from './components/Footer'
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
     <Router>
       <ThemeProvider>
-        <GlobalStyle />
-        <Header />
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/survey/:questionNumber" element={<Survey />} />
-          <Route path="/freelances" element={<Freelances />}></Route>
-          <Route path="/results" element={<Results />}></Route>
-          <Route path="*" element={<Error />} />
-        </Routes>
-        <Footer />
+        <SurveyProvider>
+          <GlobalStyle />
+          <Header />
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/survey/:questionNumber" element={<Survey />} />
+            <Route path="/freelances" element={<Freelances />}></Route>
+            <Route path="/results" element={<Results />}></Route>
+            <Route path="*" element={<Error />} />
+          </Routes>
+          <Footer />
+        </SurveyProvider>
       </ThemeProvider>
     </Router>
   </React.StrictMode>
